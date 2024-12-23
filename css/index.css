@@ -2,6 +2,10 @@
     border: solid 1px black;
 }
 
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 header {
     height: 100px;
     display: flex;
@@ -22,6 +26,11 @@ section {
 
 footer {
     height: 100px;
+    background-color:darkslategrey;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 nav ul {
