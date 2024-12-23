@@ -1,0 +1,58 @@
+* {
+    border: solid 1px black;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    max-height: 100px;
+}
+
+nav {
+    height: 50px;
+}
+
+section {
+    height: 500px;
+}
+
+footer {
+    height: 100px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 6px;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+
+
+/*media queries para pantallas menores de 768px*/
+
+@media (max-width: 768px) {
+    header {
+        justify-content: space-around;
+    }
+
+    header h1 {
+        display: none;
+    }
+
+    nav ul {
+        justify-content:space-around;
+    }
+}
