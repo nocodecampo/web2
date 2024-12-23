@@ -39,6 +39,7 @@ nav ul li a {
     text-decoration: none;
 }
 
+/*Estilos seccion 1*/
 .seccion1 {
     background-image: url(../img/aprender-html.png);
     background-size: cover;
@@ -66,6 +67,41 @@ nav ul li a {
     z-index: 2;
 }
 
+/*Estilos seccion 2*/
+.seccion2 {
+    background-image: url(../img/aprender-css.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.seccion2 h3 {
+    color: azure;
+    font-size: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+/*Estilos seccion 3*/
+.seccion3 {
+    background-image: url(../img/aprender-js.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.seccion3 h3 {
+    color: azure;
+    font-size: 60px;
+    position: relative;
+    z-index: 2;
+}
 
 
 /*media queries para pantallas menores de 768px*/
@@ -83,7 +119,9 @@ nav ul li a {
         justify-content: space-around;
     }
 
-    .seccion1 h3 {
+    .seccion1 h3,
+    .seccion2 h3,
+    .seccion3 h3 {
         font-size: 32px;
     }
 }
