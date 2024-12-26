@@ -5,9 +5,7 @@ const enviar = document.getElementById('enviar');
 const errMsg = document.getElementById('errMsg');
 
 
-password.oninput = validacionInput;
-repeatPassword.oninput = validacionInput;
-
+// Función para validar si coinciden
 function validacionInput() {
 
     if (password.value == repeatPassword.value) {
@@ -19,3 +17,7 @@ function validacionInput() {
     }
 
 }
+
+// Añadir eventos para ejecutar la función
+password.oninput = validacionInput;
+repeatPassword.oninput = validacionInput;
