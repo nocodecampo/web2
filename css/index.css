@@ -33,6 +33,11 @@ footer {
     justify-content: space-around;
 }
 
+footer .rrss-wrapper{
+    display: flex;
+    column-gap: 6px;
+}
+
 nav ul {
     display: flex;
     justify-content: right;
