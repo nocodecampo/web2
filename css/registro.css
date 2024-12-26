@@ -58,8 +58,10 @@
     font-weight: bold;
     font-size: 16px;
 }
-.loginForm .btnCrear:disabled{
+
+.loginForm .btnCrear:disabled {
     background-color: grey;
+    cursor: not-allowed;
 }
 
 .loginForm .btnBorrar {
