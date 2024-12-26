@@ -34,8 +34,10 @@
     display: flex;
     flex-direction: column;
 }
-.inputContainer label{
-    font-size: 16px;
+
+.inputContainer label {
+    font-size: 14px;
+    text-align: left;
 }
 
 .inputContainer input {
@@ -43,9 +45,10 @@
     margin: 8px 0 0 0;
     border-radius: 4px;
     border: solid 1px grey;
+    font-size: 16px;
 }
 
-.loginForm button {
+.loginForm .btnCrear {
     padding: 16px 0;
     margin: 8px 0 0 0;
     background-color: cadetblue;
@@ -54,4 +57,17 @@
     border-radius: 8px;
     font-weight: bold;
     font-size: 16px;
+}
+.loginForm .btnCrear:disabled{
+    background-color: grey;
+}
+
+.loginForm .btnBorrar {
+    padding: 16px 0;
+    margin: 8px 0 0 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 12px;
 }
