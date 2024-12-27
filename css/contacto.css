@@ -1,0 +1,96 @@
+.contactSection {
+    padding: 24px;
+    background-color: cornsilk;
+    display: flex;
+    justify-content: center;
+}
+
+.contactFormContainer {
+    display: flex;
+    column-gap: 24px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 968px;
+}
+
+.leftCol {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    width: 100%;
+}
+
+.leftCol h1 {
+    margin: 0 0 24px 0;
+}
+
+.leftCol i {
+    color: chocolate;
+}
+
+.leftCol div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+}
+
+.rightCol {
+    width: 100%;
+    padding: 8px;
+}
+
+.rightCol form {
+    border-radius: 8px;
+    border: solid 1px black;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 16px;
+}
+
+.inputContainer{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    row-gap: 4px;
+}
+.inputContainer label{
+    font-size: 12px;
+}
+
+.inputContainer input {
+    padding: 12px 8px;
+    border-radius: 4px;
+    border: solid 1px grey;
+}
+
+.checkContainer label{
+    font-size: 14px;
+}
+
+form button {
+    padding: 16px 0;
+    margin: 8px 0 0 0;
+    background-color: cadetblue;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+form button:disabled{
+    cursor: not-allowed;
+    background-color:grey;
+}
+
+@media (max-width: 768px) {
+    .contactFormContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 968px;
+    }
+}

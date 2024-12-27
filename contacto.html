@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - web2</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <img src="img/logo-google-classroom.jfif" alt="logo">
+            <h1>Google Classroom</h1>
+        </header>
+        <!--Menu de navegación-->
+        <nav>
+            <ul id="menu" class="hidden">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacta</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <section class="contactSection">
+            <div class="contactFormContainer">
+                <div class="leftCol">
+                    <h1>¿Tienes dudas? Contacta con nosotros.</h1>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Centro de formación en Torrecedeira 82, bajo</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone"></i>
+                        <p>123 123 123</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-envelope"></i>
+                        <p><a href="mailto:hola@formacom">hola@formacom</a></p>
+                    </div>
+                </div>
+                <div class="rightCol">
+                    <form action="post">
+                        <div class="inputContainer">
+                            <label for="nombre">Nombre*</label>
+                            <input type="text" name="" id="nombre" required>
+                        </div>
+                        <div class="inputContainer">
+                            <label for="email">Email*</label>
+                            <input type="email" name="" id="email" required>
+                        </div>
+                        <div class="inputContainer">
+                            <label for="message">Mensaje*</label>
+                            <textarea rows="6" name="" id="message">Escribe aquí algo</textarea>
+                        </div>
+                        <div class="checkContainer">
+                            <input type="checkbox" name="" id="policy" required>
+                            <label for="policy">*He leído y acepto la <a href="/">política de privacidad</a></label>
+                        </div>
+                        <button type="submit" disabled id="contactButton">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="javascript/contacto.js"></script>
+
+</body>
+
+</html>
