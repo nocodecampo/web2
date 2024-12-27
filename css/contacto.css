@@ -36,7 +36,6 @@
 
 .rightCol {
     width: 100%;
-    padding: 8px;
 }
 
 .rightCol form {
@@ -49,13 +48,14 @@
     padding: 16px;
 }
 
-.inputContainer{
+.inputContainer {
     display: flex;
     justify-content: left;
     flex-direction: column;
     row-gap: 4px;
 }
-.inputContainer label{
+
+.inputContainer label {
     font-size: 12px;
 }
 
@@ -65,7 +65,7 @@
     border: solid 1px grey;
 }
 
-.checkContainer label{
+.checkContainer label {
     font-size: 14px;
 }
 
@@ -79,9 +79,10 @@ form button {
     font-weight: bold;
     font-size: 16px;
 }
-form button:disabled{
+
+form button:disabled {
     cursor: not-allowed;
-    background-color:grey;
+    background-color: grey;
 }
 
 @media (max-width: 768px) {
@@ -89,8 +90,5 @@ form button:disabled{
         display: flex;
         flex-direction: column;
         row-gap: 24px;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 968px;
     }
 }
