@@ -34,6 +34,7 @@ header {
 .menuDesplegable{
     position: absolute;
     background-color: white;
+    display: none;
 }
 
 footer {
