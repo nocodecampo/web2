@@ -11,13 +11,17 @@ function desplegarMenu() {
 
 userPic.onclick = desplegarMenu;
 
-/* Código de ChatGPT*/
+/* Funcion menu aside*/
 
-/*document.getElementById("userPicContainer").addEventListener("click", function () {
-    const menu = document.getElementById("menuDesplegable");
-    if (menu.style.display === "none" || menu.style.display === "") {
-        menu.style.display = "block";
-    } else {
-        menu.style.display = "none";
+var burgerIcon = document.getElementById('burgerIcon');
+var menuAside = document.getElementById('menuAside');
+
+function mostrarMenu() {
+    if (menuAside.style.display == "none") {
+        menuAside.style.display = "block";
+    }else{
+        menuAside.style.display = "none";
     }
-});*/
+}
+
+burgerIcon.onclick = mostrarMenu;

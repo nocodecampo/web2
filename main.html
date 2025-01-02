@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <a href="index.html"><img src="img/logo.svg" alt="logo"></a>
+        <a href="index.html" class="logo"><img src="img/logo.svg" alt="logo"></a>
         <div class="userMenuContainer">
             <div class="userPicContainer" id="userPicContainer">
                 <img src="img/User-Profile.png" alt="foto de perfil">
@@ -21,23 +21,28 @@
             <div class="menuDesplegable" id="menuDesplegable">
                 <ul class="menuList">
                     <li><a href="">Datos de usuario</a></li>
-                    <li><a href="">Cerrar sesión</a></li>
+                    <li><a href="index.html">Cerrar sesión</a></li>
                 </ul>
             </div>
         </div>
     </header>
+
     <main>
         <aside class="mainAside">
-            <ul>
-                <li><a href="">Item 1</a></li>
-                <li><a href="">Item 2</a></li>
-                <li><a href="">Item 3</a></li>
+            <i class="fa-solid fa-bars" id="burgerIcon"></i>
+            <ul id="menuAside">
+                <li><a href=""><i class="fa-solid fa-cart-shopping"></i>Pedidos</a></li>
+                <li><a href=""><i class="fa-solid fa-file-invoice"></i>Facturas</a></li>
+                <li><a href=""><i class="fa-solid fa-circle-exclamation"></i>Incidencias</a></li>
+                <li><a href=""><i class="fa-solid fa-calendar"></i>Calendario</a></li>
+                <li><a href=""><i class="fa-solid fa-euro-sign"></i>Presupuestos</a></li>
             </ul>
         </aside>
         <section class="mainSection">
             <p>Esto es una sección</p>
         </section>
     </main>
+    
     <footer>
         <p>© Formacom 2024</p>
         <div class="rrss-wrapper">
