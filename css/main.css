@@ -4,7 +4,7 @@
     border: solid 1px black;
 }
 
-body{
+body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
 }
 
-.userMenuContainer{
+.userMenuContainer {
     position: relative;
 }
 
@@ -23,6 +23,7 @@ header {
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .userPicContainer img {
@@ -31,11 +32,30 @@ header {
     object-fit: cover;
 }
 
-.menuDesplegable{
+.menuDesplegable {
     position: absolute;
+    padding: 8px 0;
     background-color: white;
     display: none;
 }
+
+.menuList {
+    list-style-type: none;
+    font-size: 12px;
+}
+
+.menuList li {
+    padding: 4px 0;
+}
+
+aside.mainAside,
+section.mainSection {
+    display: flex;
+}
+
+
+
+/* Estilos footer*/
 
 footer {
     height: 100px;
