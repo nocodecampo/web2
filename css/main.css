@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    border: solid 1px black;
 }
 
 body {
@@ -24,6 +23,7 @@ header {
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
+    border: solid 1px gray;
 }
 
 .userPicContainer img {
@@ -34,9 +34,10 @@ header {
 
 .menuDesplegable {
     position: absolute;
-    padding: 8px 0;
+    padding: 8px;
     background-color: white;
     display: none;
+    border: solid 1px gray;
 }
 
 .menuList {
@@ -57,6 +58,8 @@ main {
     width: 100%;
     max-width: 150px;
     padding: 24px;
+    background-color: bisque;
+    border-radius: 0 16px 0 0;
 }
 
 .mainAside ul {
@@ -71,6 +74,7 @@ main {
 .mainAside ul li a {
     display: flex;
     column-gap: 8px;
+    padding: 4px 0;
     text-decoration: none;
 }
 
@@ -140,11 +144,12 @@ footer .rrss-wrapper {
 
     .menuDesplegable {
         position: absolute;
-        padding: 8px 0;
+        padding: 8px;
         background-color: white;
         display: none;
         top: 50px;
         right: 0%;
+        border: solid 1px gray;
     }
 
     main {
@@ -155,17 +160,30 @@ footer .rrss-wrapper {
     .mainAside {
         width: 100%;
         max-width: 100%;
-        padding: 8px 16px;
+        padding: 8px 0;
+        border-radius: 0;
     }
 
     .fa-bars {
         display: block;
         margin: 0 0 8px 0;
+        padding: 16px 16px 8px 16px;
     }
 
     .mainAside ul {
         display: none;
         width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mainAside ul li {
+        padding: 8px 16px;
+        border-bottom: solid 1px gray;
+    }
+
+    .mainAside ul li:nth-child(5) {
+        border-bottom: none;
     }
 
     .mainSection {
