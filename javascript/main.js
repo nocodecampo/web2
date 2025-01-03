@@ -57,11 +57,12 @@ formIncidencia.onsubmit = function (e) {
     e.preventDefault();
     var form = e.target;
     //var id = form.id.value;
+    var id = tablaIncidencia.rows.length + 1;
     var fecha = form.fecha.value.split('-').reverse().join('/');
     var descripcion = form.descripcion.value;
     var row = document.createElement('tr');
     row.innerHTML = `
-        <td>6</td>
+        <td>${id}</td>
         <td>${fecha}</td>
         <td>${descripcion}</td>
         <td><i class="fa-solid fa-pen-to-square"></i><i class="fas fa-trash"></i></td>
