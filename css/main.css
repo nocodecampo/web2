@@ -11,6 +11,8 @@ header {
     padding: 24px 48px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px gray;
 }
 
 .userMenuContainer {
@@ -59,7 +61,10 @@ main {
     max-width: 150px;
     padding: 24px;
     background-color: bisque;
-    border-radius: 0 16px 0 0;
+}
+
+#menuAsideMobile {
+    display: none;
 }
 
 .mainAside ul {
@@ -90,6 +95,80 @@ main {
 .mainSection {
     width: 100%;
     padding: 24px;
+}
+
+.incidenciasContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.addIncidencia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+    background-color: darkslategrey;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.addIncidencia div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.addIncidencia div label{
+    font-size: 16px;
+}
+
+.addIncidencia div input{
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+}
+
+.addIncidencia button{
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+    background-color: white;
+    color: darkslategrey;
+    cursor: pointer;
+}
+
+.incidenciasTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.incidenciasTable th {
+    background-color: darkslategrey;
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+.incidenciasTable th:last-child {
+    text-align: center;
+}
+
+.incidenciasTable tr:nth-child(even) {
+    background-color: bisque;
+}
+
+.incidenciasTable td {
+    padding: 8px;
+    border-bottom: solid 1px gray;
+}
+
+.incidenciasTable td:last-child {
+    text-align: center;
 }
 
 
@@ -161,7 +240,6 @@ footer .rrss-wrapper {
         width: 100%;
         max-width: 100%;
         padding: 8px 0;
-        border-radius: 0;
     }
 
     .fa-bars {
@@ -170,19 +248,23 @@ footer .rrss-wrapper {
         padding: 16px 16px 8px 16px;
     }
 
-    .mainAside ul {
+    #menuAside {
+        display: none;
+    }
+
+    .mainAside #menuAsideMobile {
         display: none;
         width: 100%;
         padding: 0;
         margin: 0;
     }
 
-    .mainAside ul li {
+    .mainAside #menuAsideMobile li {
         padding: 8px 16px;
         border-bottom: solid 1px gray;
     }
 
-    .mainAside ul li:nth-child(5) {
+    .mainAside #menuAsideMobile li:nth-child(5) {
         border-bottom: none;
     }
 

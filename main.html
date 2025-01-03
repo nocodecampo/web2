@@ -29,8 +29,17 @@
 
     <main>
         <aside class="mainAside">
-            <i class="fa-solid fa-bars" id="burgerIcon"></i>
+            <!--Menú desktop-->
             <ul id="menuAside">
+                <li><a href="" title="Pedidos"><i class="fa-solid fa-cart-shopping"></i>Pedidos</a></li>
+                <li><a href="" title="Facturas"><i class="fa-solid fa-file-invoice"></i>Facturas</a></li>
+                <li><a href="" title="Incidencias"><i class="fa-solid fa-circle-exclamation"></i>Incidencias</a></li>
+                <li><a href="" title="Calendario"><i class="fa-solid fa-calendar"></i>Calendario</a></li>
+                <li><a href="" title="Presupuestos"><i class="fa-solid fa-euro-sign"></i>Presupuestos</a></li>
+            </ul>
+            <!--Menú móvil-->
+            <i class="fa-solid fa-bars" id="burgerIcon"></i>
+            <ul id="menuAsideMobile">
                 <li><a href="" title="Pedidos"><i class="fa-solid fa-cart-shopping"></i>Pedidos</a></li>
                 <li><a href="" title="Facturas"><i class="fa-solid fa-file-invoice"></i>Facturas</a></li>
                 <li><a href="" title="Incidencias"><i class="fa-solid fa-circle-exclamation"></i>Incidencias</a></li>
@@ -39,7 +48,64 @@
             </ul>
         </aside>
         <section class="mainSection">
-            <p>Esto es una sección</p>
+            <div class="incidenciasContainer">
+                <h3>Listado incidencias</h3>
+                <div class="addIncidenciaForm">
+                    <form action="" method="post" class="addIncidencia" id="addIncidencia">
+                        <div>
+                            <label for="fecha"> Fecha</label>
+                            <input type="date" name="fecha" id="fecha" placeholder="Fecha">
+                        </div>
+                        <div>
+                            <label for="descripcion">Descripción</label>
+                            <input type="text" name="descripcion" id="descripcion" placeholder="Descripción">
+                        </div>
+                        <button type="submit">Añadir incidencia</button>
+                    </form>
+                </div>
+
+                <table class="incidenciasTable" id="incidenciasTable">
+                    <thead>
+                        <th scope="col">Id</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>01/01/2021</td>
+                            <td>Problema con el servidor</td>
+                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>02/01/2021</td>
+                            <td>Problema con el servidor</td>
+                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>03/01/2021</td>
+                            <td>Problema con el servidor</td>
+                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>04/01/2021</td>
+                            <td>Problema con el servidor</td>
+                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>05/01/2021</td>
+                            <td>Problema con el servidor</td>
+                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
