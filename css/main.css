@@ -95,6 +95,8 @@ main {
 .mainSection {
     width: 100%;
     padding: 24px;
+    max-height: 68vh;
+    overflow: auto;
 }
 
 .incidenciasContainer {
@@ -169,6 +171,12 @@ main {
 
 .incidenciasTable td:last-child {
     text-align: center;
+}
+
+.incidenciasTable i {
+    cursor: pointer;
+    padding: 2px;
+    margin: 0 2px;
 }
 
 

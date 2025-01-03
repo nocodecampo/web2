@@ -53,12 +53,13 @@
                 <div class="addIncidenciaForm">
                     <form action="" method="post" class="addIncidencia" id="addIncidencia">
                         <div>
-                            <label for="fecha"> Fecha</label>
-                            <input type="date" name="fecha" id="fecha" placeholder="Fecha">
+                            <label for="fecha"> Fecha*</label>
+                            <input type="date" name="fecha" id="fecha" required>
                         </div>
                         <div>
-                            <label for="descripcion">Descripción</label>
-                            <input type="text" name="descripcion" id="descripcion" placeholder="Descripción">
+                            <label for="descripcion">Descripción*</label>
+                            <input type="text" name="descripcion" id="descripcion" placeholder="Añade descripción"
+                                required>
                         </div>
                         <button type="submit">Añadir incidencia</button>
                     </form>

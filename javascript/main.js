@@ -57,7 +57,6 @@ formIncidencia.onsubmit = function (e) {
     e.preventDefault();
     var form = e.target;
     var id = form.id.value = getNextId();
-    //var id = tablaIncidencia.rows.length + 1;
     var fecha = form.fecha.value.split('-').reverse().join('/');
     var descripcion = form.descripcion.value;
     var row = document.createElement('tr');
@@ -83,7 +82,7 @@ formIncidencia.onsubmit = function (e) {
 function getNextId() {
     var rows = tablaIncidencia.getElementsByTagName('tr');
     var maxId = 0;
-    for (var i = 1; i < rows.length; i++) { // Start from 1 to skip the header row
+    for (var i = 1; i < rows.length; i++) { // Empieza en 1 para saltar la fila de cabecera
         var id = parseInt(rows[i].getElementsByTagName('td')[0].innerText);
         if (id > maxId) {
             maxId = id;
