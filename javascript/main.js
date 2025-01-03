@@ -57,7 +57,7 @@ formIncidencia.onsubmit = function (e) {
     e.preventDefault();
     var form = e.target;
     //var id = form.id.value;
-    var fecha = form.fecha.value;
+    var fecha = form.fecha.value.split('-').reverse().join('/');
     var descripcion = form.descripcion.value;
     var row = document.createElement('tr');
     row.innerHTML = `

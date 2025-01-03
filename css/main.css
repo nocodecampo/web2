@@ -104,7 +104,7 @@ main {
     gap: 32px;
 }
 
-.addIncidencia{
+.addIncidencia {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,24 +116,24 @@ main {
     cursor: pointer;
 }
 
-.addIncidencia div{
+.addIncidencia div {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
 }
 
-.addIncidencia div label{
+.addIncidencia div label {
     font-size: 16px;
 }
 
-.addIncidencia div input{
+.addIncidencia div input {
     padding: 4px;
     border-radius: 4px;
     border: none;
 }
 
-.addIncidencia button{
+.addIncidencia button {
     padding: 4px;
     border-radius: 4px;
     border: none;
@@ -271,6 +271,49 @@ footer .rrss-wrapper {
     .mainSection {
         width: auto;
         padding: 16px;
+    }
+
+    .addIncidencia {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        background-color: darkslategrey;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .addIncidencia div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .addIncidencia div label {
+        font-size: 16px;
+    }
+
+    .addIncidencia div input {
+        padding: 4px;
+        border-radius: 4px;
+        width: 100%;
+        border: none;
+    }
+
+    .addIncidencia button {
+        padding: 12px;
+        border-radius: 4px;
+        border: none;
+        background-color: white;
+        color: darkslategrey;
+        cursor: pointer;
+        width: 100%;
     }
 
 }
