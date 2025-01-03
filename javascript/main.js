@@ -56,8 +56,8 @@ var tablaIncidencia = document.getElementById('incidenciasTable');
 formIncidencia.onsubmit = function (e) {
     e.preventDefault();
     var form = e.target;
-    //var id = form.id.value;
-    var id = tablaIncidencia.rows.length + 1;
+    var id = form.id.value = getNextId();
+    //var id = tablaIncidencia.rows.length + 1;
     var fecha = form.fecha.value.split('-').reverse().join('/');
     var descripcion = form.descripcion.value;
     var row = document.createElement('tr');
@@ -78,3 +78,17 @@ formIncidencia.onsubmit = function (e) {
         }
     }
 }
+
+// Función para leer el id de la fila anterior y sumarle 1
+function getNextId() {
+    var rows = tablaIncidencia.getElementsByTagName('tr');
+    var maxId = 0;
+    for (var i = 1; i < rows.length; i++) { // Start from 1 to skip the header row
+        var id = parseInt(rows[i].getElementsByTagName('td')[0].innerText);
+        if (id > maxId) {
+            maxId = id;
+        }
+    }
+    return maxId + 1;
+}
+
