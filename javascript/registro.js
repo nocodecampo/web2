@@ -8,7 +8,7 @@ const errMsg = document.getElementById('errMsg');
 // Función para validar si coinciden
 function validacionInput() {
 
-    if (password.value == repeatPassword.value) {
+    if (password.value === repeatPassword.value) {
         enviar.disabled = false;
         errMsg.style.display = 'none';
     } else {
@@ -21,3 +21,4 @@ function validacionInput() {
 // Añadir eventos para ejecutar la función
 password.oninput = validacionInput;
 repeatPassword.oninput = validacionInput;
+

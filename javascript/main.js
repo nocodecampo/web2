@@ -2,7 +2,7 @@ var userPic = document.getElementById('userPicContainer');
 var menuDesple = document.getElementById('menuDesplegable');
 
 function desplegarMenu() {
-    if (menuDesple.style.display == "block") {
+    if (menuDesple.style.display === "block") {
         menuDesple.style.display = "none";
     } else {
         menuDesple.style.display = "block";
@@ -18,7 +18,7 @@ var burgerIcon = document.getElementById('burgerIcon');
 var menuAside = document.getElementById('menuAsideMobile');
 
 function mostrarMenu() {
-    if (menuAside.style.display == "block") {
+    if (menuAside.style.display === "block") {
         menuAside.style.display = "none";
     } else {
         menuAside.style.display = "block";
