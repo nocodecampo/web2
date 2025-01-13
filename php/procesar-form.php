@@ -1,4 +1,3 @@
-<!-- Conexion con BBDD -->
 <?php
 // Configuración de la base de datos
 $servername = "localhost";
@@ -7,25 +6,25 @@ $password = "";
 $dbname = "web2";
 
 // Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Comprobar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // Establecer el modo de error de PDO a excepción
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Conexión fallida: " . $e->getMessage());
 }
-echo "Conexión exitosa - ";
 
-// Insertar datos en la base de datos
-$sql = "INSERT INTO usuarios (nombre, apellidos, email, fechaNac, password) VALUES ('" . $_POST['nombre'] . "', '" . $_POST['apellidos'] . "', '" . $_POST['email'] . "', '" . $_POST['fechaNac'] . "', '" . $_POST['password'] . "')";
+// Encriptar la contraseña
+$hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-// Comprobar si se ha insertado correctamente
-if ($conn->query($sql) === TRUE) {
-    echo "Nuevo registro creado";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+// Insertar el usuario en la base de datos
+$sql = "INSERT INTO usuarios (nombre, apellidos, email, fechaNac, password) VALUES ('" . $_POST['nombre'] . "', '" . $_POST['apellidos'] . "', '" . $_POST['email'] . "', '" . $_POST['fechaNac'] . "', '" . $hashed_password . "')";
+$conn->exec($sql);
+
+echo "Usuario creado exitosamente";
 
 // Cerrar conexión
-$conn->close();
+$conn = null;
 
-?>
+// Redirigir a la página de login
+header('Location: ../login.html');
