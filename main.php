@@ -28,7 +28,7 @@ if (!isset($_SESSION['usuario'])) {
             <div class="menuDesplegable" id="menuDesplegable">
                 <ul class="menuList">
                     <li><a href="">Datos de usuario</a></li>
-                    <li><a href="index.html">Cerrar sesión</a></li>
+                    <li><a href="php/cerrar-sesion.php">Cerrar sesión</a></li>
                 </ul>
             </div>
         </div>

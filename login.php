@@ -16,7 +16,7 @@ session_start();
 <body>
   <section class="loginSection">
     <div class="container">
-      <a href="index.html">
+      <a href="index.php">
         <img src="img/logo.svg" alt="Google Classroom" />
       </a>
       <form
