@@ -12,7 +12,7 @@
     <section class="loginSection">
         <div class="container">
             <h1>Regístrate en Google Classroom</h1>
-            <form action="php/procesar-form.php" method="post" class="loginForm" id="registro">
+            <form action="php/procesar-registro.php" method="post" class="loginForm" id="registro">
                 <div class="inputContainer">
                     <label for="nombre">
                         Nombre*

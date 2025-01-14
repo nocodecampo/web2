@@ -1,38 +1,44 @@
 <?php
+session_start();
 // Conexion a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "web2";
-
-// Crear conexión
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // Establecer el modo de error PDO a excepción
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Conexión exitosa";
-} catch(PDOException $e) {
-    echo "Conexión fallida: " . $e->getMessage();
-}
-
-// Recibir los datos desde el formulario
-$usuario = $_POST['nombre'];
-$clave = $_POST['password'];
+include 'dbconnect.php';
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 // Consulta a la base de datos
-$sql = "SELECT * FROM usuarios WHERE nombre = '$usuario' AND password = '$clave'";
-$result = $conn->query($sql);
+try {
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $usuario = $stmt->fetch();
 
-// Verificar si el usuario existe
-if ($result->rowCount() > 0) {
-    // Iniciar sesión
-    session_start();
-    $_SESSION['nombre'] = $usuario;
-    header("Location: ../index.php");
-} else {
-    echo "Usuario o contraseña incorrectos";
+    // Verificar si el usuario existe
+    if ($usuario) {
+        if (password_verify($password, $usuario['password'])) {
+            // Iniciar sesión
+            session_start();
+            $_SESSION['usuario'] = $usuario;
+            // Redirigir a la página de main
+            header("Location: ../main.html");
+            exit();
+        } else {
+            // Contraseña incorrecta
+            $_SESSION['error'] = "Contraseña incorrecta. Por favor, inténtalo de nuevo.";
+            header("Location: ../login.php");
+            exit();
+        }
+    } else {
+        // Usuario no encontrado
+        $_SESSION['error'] = "Usuario no encontrado. Verifica tu correo.";
+        header("Location: ../login.php");
+        exit();
+    }
+} catch (PDOException $e) {
+    $_SESSION['error'] = "Ocurrió un error al procesar la solicitud.";
+    header("Location: ../login.php");
+    exit();
+
+    // Cerrar la conexión a la base de datos
+    $conn = null;
 }
-
-$conn = null;
-
 ?>
