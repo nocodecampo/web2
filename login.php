@@ -1,3 +1,8 @@
+<?php
+// Asegúrate de que no haya espacios antes de session_start();
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,7 +26,6 @@
         id="loginFormulario">
         <!-- Mostrar mensaje de error -->
         <?php
-        session_start();
         if (isset($_SESSION['error'])) {
           echo '<p class="error-message">' . htmlspecialchars($_SESSION['error']) . '</p>';
           unset($_SESSION['error']); // Eliminar el mensaje de error después de mostrarlo

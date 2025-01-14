@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,7 +20,7 @@
 
 <body>
     <header>
-        <a href="index.html" class="logo"><img src="img/logo.svg" alt="logo"></a>
+        <a href="index.php" class="logo"><img src="img/logo.svg" alt="logo"></a>
         <div class="userMenuContainer">
             <div class="userPicContainer" id="userPicContainer">
                 <img src="img/User-Profile.png" alt="foto de perfil">
