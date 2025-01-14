@@ -4,6 +4,24 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
     exit;
 }
+include 'php/dbconnect.php';
+
+// Procesar el formulario de incidencias
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $fecha = $_POST['fecha'];
+    $descripcion = $_POST['descripcion'];
+
+    // Insertar la incidencia asociada al usuario logueado
+    $stmt = $conn->prepare("INSERT INTO incidencias (fecha, descripcion, idUsuario) VALUES (:fecha, :descripcion, :idUsuario)");
+    $stmt->bindParam(':fecha', $fecha);
+    $stmt->bindParam(':descripcion', $descripcion);
+    $stmt->bindParam(':idUsuario', $_SESSION['usuario']['id']);
+    $stmt->execute();
+    
+    // Redirigir a la misma página para evitar reenvío del formulario
+    header("Location: main.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -58,7 +76,7 @@ if (!isset($_SESSION['usuario'])) {
             <div class="incidenciasContainer">
                 <h3>Listado incidencias</h3>
                 <div class="addIncidenciaForm">
-                    <form action="" method="post" class="addIncidencia" id="addIncidencia">
+                    <form action="" method="post" class="addIncidencia">
                         <div>
                             <label for="fecha"> Fecha*</label>
                             <input type="date" name="fecha" id="fecha" required>
