@@ -179,6 +179,63 @@ main {
     margin: 0 2px;
 }
 
+.iconTrash{
+    color: red;
+    transition: color 0.5s;
+}
+
+.iconTrash:hover{
+    color: darkred;
+}
+
+.iconEdit{
+    color: green;
+    transition: color 0.5s;
+}
+
+.iconEdit:hover{
+    color: darkgreen;
+}
+
+
+/* Estilos editar incidencias */
+
+.editIncidenciaForm {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background-color: darkslategrey;
+    color: white;
+    border-radius: 8px;
+}
+.editIncidenciaForm div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}  
+
+.editIncidenciaForm div label {
+    font-size: 16px;
+}
+
+.editIncidenciaForm div input {
+    padding: 12px 4px;
+    border-radius: 4px;
+    border: none;
+}
+
+.editIncidenciaForm button {
+    padding: 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: white;
+    color: darkslategrey;
+    cursor: pointer;
+}
+
 
 
 
@@ -281,7 +338,7 @@ footer .rrss-wrapper {
         padding: 16px;
     }
 
-    .addIncidencia {
+    .addIncidencia, .editIncidenciaForm {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -308,7 +365,7 @@ footer .rrss-wrapper {
     }
 
     .addIncidencia div input {
-        padding: 4px;
+        padding: 8px 4px;
         border-radius: 4px;
         width: 100%;
         border: none;
@@ -323,5 +380,6 @@ footer .rrss-wrapper {
         cursor: pointer;
         width: 100%;
     }
+
 
 }

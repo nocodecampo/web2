@@ -17,12 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(':descripcion', $descripcion);
     $stmt->bindParam(':idUsuario', $_SESSION['usuario']['id']);
     $stmt->execute();
-    
+
     // Redirigir a la misma página para evitar reenvío del formulario
     header("Location: main.php");
     exit;
 }
+
+// Trae todas las incidencias
+$sql = "SELECT * FROM incidencias";
+$result = $conn->query($sql);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -76,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="incidenciasContainer">
                 <h3>Listado incidencias</h3>
                 <div class="addIncidenciaForm">
-                    <form action="" method="post" class="addIncidencia">
+                    <form action="php/crear-incidencia.php" method="post" class="addIncidencia">
                         <div>
                             <label for="fecha"> Fecha*</label>
                             <input type="date" name="fecha" id="fecha" required>
@@ -99,36 +105,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>01/01/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>02/01/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>03/01/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>04/01/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>05/01/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
-                        </tr>
+                    <?php
+                        while ($row = $result->fetch()) {
+                            echo "<tr>
+                            <td>".$row['id']."</td>
+                            <td>".$row['fecha']."</td>
+                            <td>".$row['descripcion']."</td>
+                            <td>
+                                <a class='iconTrash' href='php/borrar-incidencia.php?idIncidencia=".$row['id']."'><i class='fa-solid fa-trash'></i></a>
+                                <a class='iconEdit' href='editar-incidencia.php?idIncidencia=".$row['id']."'><i class='fa-solid fa-pen-to-square'></i></a>
+                            </td>
+                            </tr>";
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -136,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </main>
 
     <footer>
-        <p>© Formacom 2024</p>
+        <p>© Formacom</p>
         <div class="rrss-wrapper">
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-github"></i>

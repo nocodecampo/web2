@@ -27,6 +27,7 @@ function mostrarMenu() {
 
 burgerIcon.addEventListener('click', mostrarMenu);
 
+/*
 // Función para eliminar una fila de la tabla
 
 var papelera = document.getElementsByClassName('fa-trash');
@@ -40,16 +41,26 @@ for (let i = 0; i < papelera.length; i++) {
     }
 
 };
+*/
 
 // función para añadir la fecha de hoy al input de fecha
+/*
 var fecha = new Date();
 var inputFecha = document.getElementById('fecha');
 
 inputFecha.value = fecha.toISOString().substr(0, 10);
+*/
+
+// Funcion para añadir el año actual al footer
+var fecha = document.querySelector('footer p');
+var currentYear = new Date().getFullYear();
+
+fecha.innerText = fecha.innerText + " " + currentYear;
+
 
 
 // Función para añadir una fila a la tabla a través del formulario
-
+/*
 var formIncidencia = document.getElementById('addIncidencia');
 var tablaIncidencia = document.getElementById('incidenciasTable');
 
@@ -76,9 +87,10 @@ formIncidencia.onsubmit = function (e) {
             row.remove();
         }
     }
-}
+}*/
 
 // Función para leer el id de la fila anterior y sumarle 1
+/*
 function getNextId() {
     var rows = tablaIncidencia.getElementsByTagName('tr');
     var maxId = 0;
@@ -89,5 +101,5 @@ function getNextId() {
         }
     }
     return maxId + 1;
-}
+}*/
 
