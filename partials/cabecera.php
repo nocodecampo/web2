@@ -1,10 +1,14 @@
 <?php
+$foto = $_SESSION['usuario']['foto'];
+if ($foto == null) {
+    $foto = 'img/User-profile.png';
+}
 ?>
 <header>
         <a href="index.php" class="logo"><img src="img/logo.svg" alt="logo"></a>
         <div class="userMenuContainer">
             <div class="userPicContainer" id="userPicContainer">
-                <img src="img/User-Profile.png" alt="foto de perfil">
+                <img src="<?php echo $foto ?>" alt="foto de perfil">
             </div>
             <div class="menuDesplegable" id="menuDesplegable">
                 <ul class="menuList">
